@@ -1,6 +1,6 @@
 version: "3.9"
 services:
- useritem-api-service:
+ countries-api-service:
   image: yorbenwij/api-project-yorbenw
   ports:
     - "8000:8000"
