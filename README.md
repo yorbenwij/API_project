@@ -4,10 +4,10 @@
 het thema dat ik heb gekozen voor mijn project zijn landen waar ik dan bewooners kan gaan toevoegen. het idee kwam niet van me eigen maar van een vriendin want ik heb soms probleemen met het opkomen van ideeën. 
 hier onder zie ge de screenshots van mijn testen locaal het werkt ook op de hosting.
 
-link hosting: ![image](https://github.com/yorbenwij/API_project/assets/91123168/c57b636f-2368-4206-b0f9-3062738cd587)
+link hosting: 
 
 
-![image](https://github.com/yorbenwij/API_project/assets/91123168/360d484f-8915-4a3d-bcfb-483d0d4a5940)
+![image](https://github.com/yorbenwij/API_project/assets/91123168/c57b636f-2368-4206-b0f9-3062738cd587)
 ![image](https://github.com/yorbenwij/API_project/assets/91123168/729ba4aa-791c-471c-9b63-ef5ec018f050)
 ![image](https://github.com/yorbenwij/API_project/assets/91123168/0ee233c5-9840-449d-a1f6-92306dfd2fca)
 ![image](https://github.com/yorbenwij/API_project/assets/91123168/9811589d-6174-4897-a9db-7126ad652ddc)
