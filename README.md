@@ -21,6 +21,7 @@ dit is mijn deployment op okteto
 
 maar het werkt niet want als ik naar de link van mijn project ga krijg ik dit
 
+![image](https://github.com/yorbenwij/API_project/assets/91123168/92cef70d-aea4-4356-b29a-6ed170096e5a)
 
 
 
