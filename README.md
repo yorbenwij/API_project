@@ -9,7 +9,6 @@ link hosting: ![image](https://github.com/yorbenwij/API_project/assets/91123168/
 
 ![image](https://github.com/yorbenwij/API_project/assets/91123168/360d484f-8915-4a3d-bcfb-483d0d4a5940)
 ![image](https://github.com/yorbenwij/API_project/assets/91123168/729ba4aa-791c-471c-9b63-ef5ec018f050)
-![image](https://github.com/yorbenwij/API_project/assets/91123168/cbd384b9-516e-4290-ab10-364962490966)
 ![image](https://github.com/yorbenwij/API_project/assets/91123168/0ee233c5-9840-449d-a1f6-92306dfd2fca)
 ![image](https://github.com/yorbenwij/API_project/assets/91123168/9811589d-6174-4897-a9db-7126ad652ddc)
 ![image](https://github.com/yorbenwij/API_project/assets/91123168/34f5e64e-c5f5-4d85-91b2-66c7f9f31b3b)
