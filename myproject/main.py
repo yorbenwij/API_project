@@ -1,3 +1,4 @@
+from typing import List
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 from database import SessionLocal, engine
@@ -5,6 +6,8 @@ import os
 import schemas
 import crud
 import models
+# from fastapi.middleware.cors import CORSMiddleware
+
 if not os.path.exists('.\sqlitedb'):
     os.makedirs('.\sqlitedb')
 
@@ -12,14 +15,38 @@ if not os.path.exists('.\sqlitedb'):
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-
-
+# origins = [
+#     "http://localhost:3000",
+# ]
+# app.add_middleware(
+#     CORSMiddleware, allow_origins=origins,
+#     allow_credentials=True,
+#     allow_methods=['*'],
+#     allow_headers=["*"],
+# )
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
+
+@app.put("/countries/{country_id}", response_model=schemas.Country)
+def update_country(country_id: int, updated_country: schemas.CountryCreate, db: Session = Depends(get_db)):
+    existing_country = crud.get_country(db, country_id=country_id)
+    if existing_country is None:
+        raise HTTPException(status_code=404, detail="Country not found")
+
+    return crud.update_country(db=db, country_id=country_id, updated_country=updated_country)
+
+# DELETE endpoint to delete a country
+@app.delete("/countries/{country_id}", response_model=schemas.Country)
+def delete_country(country_id: int, db: Session = Depends(get_db)):
+    existing_country = crud.get_country(db, country_id=country_id)
+    if existing_country is None:
+        raise HTTPException(status_code=404, detail="Country not found")
+
+    return crud.delete_country(db=db, country_id=country_id)
 
 @app.post("/countries/", response_model=schemas.Country)
 def create_country(country: schemas.CountryCreate, db: Session = Depends(get_db)):
@@ -50,3 +77,23 @@ def create_country_civilians(
 def read_civilians(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     civilians = crud.get_civilians(db, skip=skip, limit=limit)
     return civilians
+
+# User creation route
+@app.post("/users/", response_model=schemas.UserRead)
+def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
+    db_user = crud.create_user(db, user)
+    return db_user
+
+# User retrieval route
+@app.get("/users/{user_id}", response_model=schemas.UserRead)
+def read_user(user_id: int, db: Session = Depends(get_db)):
+    db_user = crud.get_user(db, user_id)
+    if db_user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    return db_user
+
+# Example route to get a list of users
+@app.get("/users/", response_model=List[schemas.UserRead])
+def read_users(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
+    users = crud.get_users(db, skip=skip, limit=limit)
+    return users
