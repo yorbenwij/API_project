@@ -17,4 +17,4 @@ jobs:
         run: docker build -t ${{ secrets.DOCKER_USER }}/yorbenwij/api-project-yorbenw:latest .
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/yorbenwij/apiproject2-yorbenw:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/yorbenwij/api-project-yorbenw:latest
